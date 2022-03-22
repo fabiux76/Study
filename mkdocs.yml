@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: My Studies
+url: www.example.com
+nav:
+  - Home: index.md
+  - Todo: todo.md
