@@ -4,4 +4,4 @@ nav:
   - Home: index.md
   - Todo: todo.md
   - Done: done.md
-  - Github: github_actions.md
+  - Github: Github/github_actions.md
