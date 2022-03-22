@@ -1,0 +1,1 @@
+- Aggiunto github action per la creazione automatica della documentazione sui commit su master
