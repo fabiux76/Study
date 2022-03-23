@@ -1,8 +1,8 @@
 # Manning Live Projects
 
-- Serverless Lambda
-- Terraform
-- Kubernetes
+- Serverless Lambda: Creating a WhatsApp Notification Service Using AWS Lambda and a Serverless Framework
+- Terraform: Automating Infrastructure for an E-commerce Website with Terraform and AWS
+- Kubernetes: Creating and Managing Cloud Native Services in Kubernetes
 
 # Courses replay
 
