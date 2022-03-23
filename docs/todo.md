@@ -16,3 +16,4 @@
     - [Github action già fatta]()
 - Create lambda with typescript
 - Github actions
+- Steps to start a new typescript project. Of different types. Taking info from book, official documentation, and grider courses

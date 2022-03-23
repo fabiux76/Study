@@ -4,4 +4,10 @@ nav:
   - Home: index.md
   - Todo: todo.md
   - Done: done.md
+  - TypeScript:
+    - General: Typescript/typescript.md
+    - UseCases: Typescript/usecases.md
+  - Serverless:
+    - Liveproject: Serverless/liveproject.md
+    - Typescript Template: Serverless/typescript template.md
   - Github: Github/github_actions.md
