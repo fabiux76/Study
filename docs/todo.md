@@ -1,3 +1,6 @@
+# Personal Access Token di GitHub. 
+Trovare modo di salvarlo nella cache senza doverlo reinserire ogni volta e senza sputtanare allo stesso tempo l'accesso a BitBucket
+
 # Manning Live Projects
 
 - Serverless Lambda: Creating a WhatsApp Notification Service Using AWS Lambda and a Serverless Framework

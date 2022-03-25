@@ -21,6 +21,8 @@ Tra i parametri principali:
 - `strict`
 - `target`: "es2015"
 
+Nota: si può creare un file `tsconfig.json` semplicemente con il comando `tsc --init`
+
 ### tslint.json
 Configurazione stylistic conventions (es tab vs spaces, trailing commas, etc)
 

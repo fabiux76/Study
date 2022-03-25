@@ -63,9 +63,11 @@ I comandi possono prendere come opzioni:
 - `--stage` or `-s` The stage in your service you want to display information about.
 - `--region` or `-r` The region in your stage that you want to display information
 
-## `serverless deploy`
+## Deploy
+`serverless deploy`
 
-## `serverless info --verbose`
+## Verifica dello stato del servizio
+`serverless info --verbose`
 
 PErò anche nella modalità verbose non si vedono tutte le risorse che invee si vedono sulla console
 
@@ -108,7 +110,38 @@ ServerlessDeploymentBucketName: whatsapppush-dev-serverlessdeploymentbucket-1hme
 Da console vedo questo:
 ![](img/ApplicationResources.JPG)
 
-## `serverless remove` 
+## Cancellazione
+`serverless remove` 
+
+## Test locale
+
+### Invocazione diretta delle funzioni
+
+Es:
+
+`serverless invoke local --function CreateNotification --path test\CreateNotificationPayloadSingle.json`
+
+# Compilazione
+
+Per trasformare da javascript a typescript, vado nella root del progetto (dove c'è il `tsconfig.json`e faccio semplicemente:
+`tsc`
+
+Per capire meglio come gestire typescript con vscode è sicuramente utile leggersi questo [tutorial](https://code.visualstudio.com/docs/typescript/typescript-tutorial)
+
+# Debug
+
+Info qui:
+- [VSCode doc](https://code.visualstudio.com/docs/editor/debugging)
+
+Step 1: Sono riuscito a fare un primo passo. Debuggare sul codice javascript (non typescript). Per fare questo è dovuto installare localmente al progetto serverless (non global) ed ho anche dovuto aggiornare la versione a 3 del serverless.yaml
+Poi usato creaa la launch configuration puntando `program` a `${workspaceRoot}/node_modules/serverless/bin/serverless.js`
+Non ho ancora capito però dove va a mettere l'outpur (immagino che se chiamo serverless da cli mi stampa la risposta di default mentre così no)
+
+MA bisogna ancora fare tanto:
+- Dove trovo gli output?
+- C'è però il problema di come debuggate typescript!!!!! 
+- L'ideale sarebbe poter dire a serverless di usare direttamente typescript! Forse in questo caso si riesce a debuggare bene
+- Poi sarebbe interessante investigare anche come usare questo plugin: [serverless offline](https://www.serverless.com/plugins/serverless-offline)
 
 # Client
 
