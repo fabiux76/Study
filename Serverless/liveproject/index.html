@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Liveproject - My Studies</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Studies</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../todo/" class="nav-link">Todo</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../done/" class="nav-link">Done</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">TypeScript <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Typescript/typescript/" class="dropdown-item">General</a>
+</li>
+                                    
+<li>
+    <a href="../../Typescript/usecases/" class="dropdown-item">UseCases</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Serverless <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Liveproject</a>
+</li>
+                                    
+<li>
+    <a href="../typescript%20template/" class="dropdown-item">Typescript Template</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../../Github/github_actions/" class="nav-link">Github</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Typescript/usecases/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../typescript%20template/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#repo" class="nav-link">Repo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#creazione-di-progetto-serverless" class="nav-link">Creazione di progetto serverless</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#gestione-dei-parametri-di-configurazione-e-delle-variabili-dambiente" class="nav-link">Gestione dei parametri di configurazione e delle variabili d'ambiente</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#check-su-tipi-anche-senza-typescript" class="nav-link">Check su tipi anche senza typescript</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#transition-to-typescript" class="nav-link">Transition to typescript</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#validazione-della-richiesta" class="nav-link">Validazione della richiesta</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#comandi-serverless" class="nav-link">Comandi serverless</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#deploy" class="nav-link">Deploy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#verifica-dello-stato-del-servizio" class="nav-link">Verifica dello stato del servizio</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#cancellazione" class="nav-link">Cancellazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#test-locale" class="nav-link">Test locale</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#invocazione-diretta-delle-funzioni" class="nav-link">Invocazione diretta delle funzioni</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#compilazione" class="nav-link">Compilazione</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#debug" class="nav-link">Debug</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#client" class="nav-link">Client</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#collezione-postman-per-le-prove" class="nav-link">Collezione Postman per le prove</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#dubbi" class="nav-link">Dubbi</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="repo">Repo</h1>
+<p>https://github.com/fabiux76/WhatsAppPush</p>
+<h1 id="creazione-di-progetto-serverless">Creazione di progetto serverless</h1>
+<p><code>serverless create --template aws-nodejs --path WhatsAppPush</code></p>
+<p>In realtà esiste anche il template <code>aws-nodejs-typescript</code>. Vedi <a href="../typescript%20template/">capitolo a parte</a> per approfondimento su questo. 
+L'approccio che ho preso in questo caso è di trasformarlo da javascript</p>
+<h1 id="gestione-dei-parametri-di-configurazione-e-delle-variabili-dambiente">Gestione dei parametri di configurazione e delle variabili d'ambiente</h1>
+<p>Environment variable defined under the provider block is accessible in all lambda functions defined for WhatsAppPush. </p>
+<h1 id="check-su-tipi-anche-senza-typescript">Check su tipi anche senza typescript</h1>
+<p>Sembra si possa fare (su Visual studio code?= mettendo questo commento nel file
+<code>// @ts-check</code>
+cfr. <a href="https://github.com/fabiux76/WhatsAppPush/commit/bf6a1ecb0c69c4c0bb36a516ab9a6642d55d1360">here</a></p>
+<h1 id="transition-to-typescript">Transition to typescript</h1>
+<p><a href="https://github.com/fabiux76/WhatsAppPush/commit/26555586f64cc0223c5182235d1bc75fdc628eda">Questo</a> è il commit che fa la transazione su typescript</p>
+<p>Passi:
+- Ho creato un <code>tsconfig.json</code>
+- Ho sostituito la dependency <code>aws-sdk</code> con <code>@types/aws-lambda</code>
+- Ho aggiuto queste devDependencies:
+    <code>json
+      "devDependencies": {
+        "@types/hapi__joi": "^17.1.7",
+        "@types/node": "^13.13.5",
+        "@types/uuid": "^8.3.1",
+        "aws-sdk": "^2.1013.0"
+    }</code>
+- Nel <code>serverless.yml</code> riferosco la funzione nella cartella <code>build</code>
+- I file da <code>.js</code> diventano <code>.ts</code> ed annoto parametri, variabili</p>
+<p>Ma il build come lo faccio?</p>
+<h1 id="validazione-della-richiesta">Validazione della richiesta</h1>
+<p>La validazione del body la facciamo con <code>joi</code></p>
+<pre><code class="language-typescript">const schema = Joi.object({
+    template_name: Joi.string().required(),
+    template_message: Joi.string().required()
+});
+
+const { error, value } = schema.validate(requestBody);
+if (error) {
+    return handleError(HttpStatus.BAD_REQUEST, 
+                        `[Template:Create:Error]:${HttpStatus[HttpStatus.BAD_REQUEST]}:${error}`);
+}
+</code></pre>
+<h1 id="comandi-serverless">Comandi serverless</h1>
+<p>I comandi possono prendere come opzioni:
+- <code>--stage</code> or <code>-s</code> The stage in your service you want to display information about.
+- <code>--region</code> or <code>-r</code> The region in your stage that you want to display information</p>
+<h2 id="deploy">Deploy</h2>
+<p><code>serverless deploy</code></p>
+<h2 id="verifica-dello-stato-del-servizio">Verifica dello stato del servizio</h2>
+<p><code>serverless info --verbose</code></p>
+<p>PErò anche nella modalità verbose non si vedono tutte le risorse che invee si vedono sulla console</p>
+<pre><code>λ serverless info --verbose
+Service Information
+service: whatsapppush
+stage: dev
+region: us-east-1
+stack: whatsapppush-dev
+resources: 44
+api keys:
+  None
+endpoints:
+  POST - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/templates
+  PUT - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/templates/{user_id}/{template_id}
+  DELETE - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/templates/{user_id}/{template_id}
+  GET - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/templates/{user_id}/{template_id}
+  GET - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/templates/{user_id}
+  POST - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/upload-url/{user_id}
+  POST - https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev/notification
+functions:
+  CreateTemplates: whatsapppush-dev-CreateTemplates
+  UpdateTemplates: whatsapppush-dev-UpdateTemplates
+  DeleteTemplates: whatsapppush-dev-DeleteTemplates
+  DetailsTemplates: whatsapppush-dev-DetailsTemplates
+  ListTemplates: whatsapppush-dev-ListTemplates
+  GetSignedUrl: whatsapppush-dev-GetSignedUrl
+  CreateNotification: whatsapppush-dev-CreateNotification
+  hello: whatsapppush-dev-hello
+layers:
+  None
+
+Stack Outputs
+WhatsAppMessageQueueURL: https://sqs.us-east-1.amazonaws.com/955501240318/whatsapppush-message-queue-name
+ServiceEndpoint: https://cfjss7amu8.execute-api.us-east-1.amazonaws.com/dev
+ServerlessDeploymentBucketName: whatsapppush-dev-serverlessdeploymentbucket-1hmecn30ikc28
+</code></pre>
+<p>Da console vedo questo:
+<img alt="" src="../img/ApplicationResources.JPG" /></p>
+<h2 id="cancellazione">Cancellazione</h2>
+<p><code>serverless remove</code> </p>
+<h2 id="test-locale">Test locale</h2>
+<h2 id="invocazione-diretta-delle-funzioni">Invocazione diretta delle funzioni</h2>
+<p>Es:</p>
+<p><code>serverless invoke local --function CreateNotification --path test\CreateNotificationPayloadSingle.json</code></p>
+<h1 id="compilazione">Compilazione</h1>
+<p>Per trasformare da javascript a typescript, vado nella root del progetto (dove c'è il <code>tsconfig.json</code>e faccio semplicemente:
+<code>tsc</code></p>
+<p>Per capire meglio come gestire typescript con vscode è sicuramente utile leggersi questo <a href="https://code.visualstudio.com/docs/typescript/typescript-tutorial">tutorial</a></p>
+<h1 id="debug">Debug</h1>
+<p>Info qui:
+- <a href="https://code.visualstudio.com/docs/editor/debugging">VSCode doc</a></p>
+<p>Step 1: Sono riuscito a fare un primo passo. Debuggare sul codice javascript (non typescript). Per fare questo è dovuto installare localmente al progetto serverless (non global) ed ho anche dovuto aggiornare la versione a 3 del serverless.yaml
+Poi usato creaa la launch configuration puntando <code>program</code> a <code>${workspaceRoot}/node_modules/serverless/bin/serverless.js</code>
+Non ho ancora capito però dove va a mettere l'outpur (immagino che se chiamo serverless da cli mi stampa la risposta di default mentre così no)</p>
+<p>MA bisogna ancora fare tanto:
+- Dove trovo gli output?
+- C'è però il problema di come debuggate typescript!!!!! 
+- L'ideale sarebbe poter dire a serverless di usare direttamente typescript! Forse in questo caso si riesce a debuggare bene
+- Poi sarebbe interessante investigare anche come usare questo plugin: <a href="https://www.serverless.com/plugins/serverless-offline">serverless offline</a></p>
+<h1 id="client">Client</h1>
+<p>Per testare il caricamento di file da client web mi ero fatto un <a href="https://github.com/fabiux76/whats-app-push-client">progetto parallelo con react</a></p>
+<p>La faccio partire con <code>npm start</code> e funziona ancora :)</p>
+<h1 id="collezione-postman-per-le-prove">Collezione Postman per le prove</h1>
+<p>...</p>
+<h1 id="dubbi">Dubbi</h1>
+<ul>
+<li>Com'è che facevo la build??? ts-node? poi serverless...</li>
+<li>Non ho capito l'uso dell'idempotentkey. Sostanzialmente è una chiave usata epr evitare inserimenti duplici... Non si poteva usare un id di dynamo?</li>
+<li>ci sono diversi <code>as any</code> nella chiamata a dynamodb che non mi piacciono. Sicuramente si può fare qualcosa...VERIFICARE</li>
+<li>Anche questo <code>process.env.DDB_TEMPLATES_TABLE_NAME || ""</code> va sistemato</li>
+<li>Sistemare anche <code>getSignedUrlPromise</code> parametro not typed</li>
+<li>Avevo fatto anche dei file di test .json. Come la facevo l'invocazione? con qualcosa tipo <code>serverless invoke local --function functionName --path lib/data.json</code></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
